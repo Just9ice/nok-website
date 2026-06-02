@@ -1,0 +1,80 @@
+.footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+  padding: 6rem 2rem 2rem;
+  margin-top: auto;
+  color: var(--footer-text);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.brandLink {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.description {
+  color: var(--footer-text);
+  line-height: 1.7;
+  max-width: 300px;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.link {
+  color: var(--footer-text);
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.link:hover {
+  color: var(--primary-color);
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.bottomBar {
+  max-width: 1280px;
+  margin: 4rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--footer-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--footer-text);
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .bottomBar {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}

@@ -1,65 +1,248 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  SunMedium,
+  BatteryCharging,
+  Bike,
+  ShieldCheck,
+  Wallet,
+  Smartphone,
+  BarChart3,
+  Globe,
+} from "lucide-react";
+import Header from "@/components/Header";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="bg-[#071120] text-white overflow-x-hidden">
+      <Header />
+      {/* Hero Section */}
+      <section
+        className="relative flex min-h-screen items-center bg-cover bg-center"
+        style={{
+          backgroundImage: "url(/Windmill2.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          backgroundBlendMode: "overlay",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020817]/95 via-[#020817]/80 to-[#020817]/40" />
+
+        {/* Hero Content */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 lg:px-12">
+          <div className="max-w-3xl">
+            {/* BADGE */}
+            <div className="mb-2 inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/10 px-4 py-1 text-sm text-green-300 backdrop-blur-md w-fit">
+              ⚡ Sustainable Energy Solutions
+            </div>
+
+            {/* Title */}
+            <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+              Powering The World's{" "}
+              <span className="bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent">
+                Energy Transition
+              </span>
+            </h1>
+
+            {/* Text */}
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/70">
+              At NOK Inc, we help homes, businesses, and communities take
+              control of their energy and mobility with solar systems, smart
+              batteries, electric transport, and modern cooling solutions.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/product"
+                className="rounded-xl bg-gradient-to-r from-green-500 to-green-600 px-8 py-4 font-semibold text-white shadow-lg shadow-green-500/20 hover:shadow-green-500/40 transition-all duration-300"
+              >
+                Explore Products
+              </Link>
+
+              <Link
+                href="/contact"
+                className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md hover:bg-white/10 transition-all duration-300"
+              >
+                Get In Touch
+              </Link>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-20 flex flex-wrap gap-10">
+              <div>
+                <h3 className="text-4xl font-bold text-green-400">500+</h3>
+                <p className="mt-2 text-white/60">Installations</p>
+              </div>
+
+              <div>
+                <h3 className="text-4xl font-bold text-green-400">98%</h3>
+                <p className="mt-2 text-white/60">Customer Satisfaction</p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold text-green-400">24/7</h3>
+                <p className="mt-2 text-white/60">Support</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* What We Offer */}
+      <section className="px-6 py-28 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
+              Our Solutions
+            </p>
+
+            <h2 className="text-4xl font-bold lg:text-5xl">What We Offer</h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {/* Cards */}
+            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-white/10">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-500/10 text-green-400">
+                <SunMedium size={34} />
+              </div>
+              <h3 className="mb-4 text-2xl font-semibold"> Solar Power </h3>
+              <p className="leading-8 text-white/65">
+                Highly efficient solar solutions designed for homes, businesses,
+                and industrial operations.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-white/10">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400">
+                <BatteryCharging size={34} />
+              </div>
+              <h3 className="mb-4 text-2xl font-semibold"> Smart Batteries </h3>
+              <p className="leading-8 text-white/65">
+                Intelligent battery storage systems that keep your energy
+                stable, reliable, and uninterrupted.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-white/10">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
+                <Bike size={34} />
+              </div>
+              <h3 className="mb-4 text-2xl font-semibold">Electric Mobility</h3>
+              <p className="leading-8 text-white/65">
+                Cost-effective and sustainable transportation solutions for
+                modern urban mobility.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="px-6 pb-28 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 teext-center">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
+              Why NOK?
+            </p>
+            <h2 className="text-4xl font-bold lg:text-5xl">Why Choose Us?</h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {/* CARD */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <ShieldCheck className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold"> Reliable </h3>
+              <p className="leading-8 text-white/65">
+                High-quality systems, certified installation, and dependable
+                support whenever you need it.
+              </p>
+            </div>
+
+            {/* Card */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <Wallet className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold"> Affordable </h3>
+              <p className="leading-8 text-white/65">
+                Reduce operational costs with efficient energy systems and
+                flexible financing options.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <Wallet className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold"> Affordable </h3>
+              <p className="leading-8 text-white/65">
+                Reduce operational costs with efficient energy systems and
+                flexible financing options.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <Smartphone className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold">Smart Technology</h3>
+              <p className="leading-8 text-white/65">
+                Monitor and manage your systems using intuitive digital tools
+                and mobile apps.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <BarChart3 className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold"> Scalable </h3>
+              <p className="leading-8 text-white/65">
+                Start with what you need today and expand your energy
+                infrastructure over time.
+              </p>
+            </div>
+
+            {/* CARD */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <Globe className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold"> Sustainable </h3>
+              <p className="leading-8 text-white/65">
+                Cleaner, quieter, and environmentally responsible solutions for
+                future-focused communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-6 pb-28 lg:px-12">
+        <div className="mx-auto max-w-7xl rounded-[40px] border border-white/10 bg-gradient-to-br from-green-500 to-blue-500/10 p-12">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
+              Build The Future
+            </p>
+
+            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+              Ready to Switch to Smarter Energy?
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-white/70">
+              Let's help you reduce energy costs, improve reliability, and move
+              towards a cleaner future with modern energy solutions.
+            </p>
+
+            <div className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-flex rounded-xl bg-green-500 px-8 py-4 font-semibold text-white transition hover:bg-green-400 hover:text-white/80"
+              >
+                Contact Us Today
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

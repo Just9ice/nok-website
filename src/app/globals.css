@@ -1,26 +1,352 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background-color: #fafbfc;
+  --text-color: #0f172a;
+  --text-secondary: #475569;
+  --primary-color: #0f766e;
+  --primary-color-glow: rgba(15, 118, 110, 0.25);
+  --primary-hover: #0d9488;
+  --surface-color: #ffffff;
+  --border-color: #e2e8f0;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --footer-bg: #0f172a;
+  --footer-text: #e2e8f0;
+  --footer-border: #1e293b;
+  
+  --font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Courier New', Courier, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-color: #020617;
+    --text-color: #f8fafc;
+    --text-secondary: #94a3b8;
+    --primary-color: #14b8a6;
+    --primary-color-glow: rgba(20, 184, 166, 0.25);
+    --primary-hover: #2dd4bf;
+    --surface-color: #0f172a;
+    --border-color: #1e293b;
+    --header-bg: rgba(2, 6, 23, 0.85);
+    --footer-bg: #000000;
+    --footer-text: #94a3b8;
+    --footer-border: #1e293b;
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--primary-hover);
+}
+
+/* Base Page Layout */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 8rem 2rem 6rem;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* PROFESSIONAL PAGE HEADER */
+.page-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+  background-color: var(--surface-color);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.page-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Premium WP Content Styling for Sub-pages */
+.wp-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  color: var(--text-color);
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.wp-content h1, .wp-content h2, .wp-content h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-color);
+}
+
+.wp-content h1 { 
+  font-size: clamp(3rem, 5vw, 4rem); 
+  margin-bottom: 2rem;
+}
+.wp-content h2 { font-size: clamp(2rem, 3vw, 2.5rem); }
+.wp-content h3 { font-size: 1.5rem; }
+
+.wp-content p {
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+.wp-content div {
+  margin-bottom: 1.8rem;
+}
+
+.wp-content ul, .wp-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.wp-content li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.wp-content img, .wp-content svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin: 3rem 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
+}
+
+.wp-content svg {
+  max-width: 32px;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* HERO INJECTION FOR HOMEPAGE */
+.home-hero {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 6rem;
+  padding-top: 4rem;
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.home-hero h1:first-of-type {
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.home-hero p:first-of-type {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* WordPress Forms & Inputs Styling */
+.wp-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  background: var(--surface-color);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.wp-content label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.wp-content input:not([type="submit"]):not([type="button"]):not([type="radio"]):not([type="checkbox"]),
+.wp-content textarea,
+.wp-content select {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  margin-top: 0.5rem;
+}
+
+.wp-content textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.wp-content input:focus,
+.wp-content select:focus,
+.wp-content textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-color-glow);
+  background-color: var(--background-color);
+}
+
+.wp-content button[type="submit"],
+.wp-content input[type="submit"],
+.wp-content .wp-block-button__link {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px var(--primary-color-glow);
+  align-self: flex-start;
+  margin-top: 1rem;
+  min-width: 200px;
+}
+
+.wp-content button[type="submit"]:hover,
+.wp-content input[type="submit"]:hover,
+.wp-content .wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-color-glow);
+  background-color: var(--primary-hover);
+  color: #fff;
+}
+
+/* WordPress Native Layout Support (Gutenberg) */
+
+.wp-content .has-text-align-center {
+  text-align: center;
+}
+
+.wp-content .has-text-align-right {
+  text-align: right;
+}
+
+.wp-content .wp-block-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin: 3.5rem 0;
+}
+
+.wp-content .wp-block-column {
+  background: var(--surface-color);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  text-align: center; /* Generally centering columns as a design choice per original */
+}
+
+.wp-content .wp-block-column:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+}
+
+.wp-content .wp-block-column > *:first-child {
+  margin-top: 0;
+}
+
+.wp-content .wp-block-column > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Gutenberg Icons usually appear as images or svgs within paragraphs in columns */
+.wp-content .wp-block-column svg,
+.wp-content .wp-block-column img,
+.wp-content .wp-block-column figure {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(99, 102, 241, 0.1);
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  border: none;
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.wp-content .wp-block-column svg {
+  width: 24px;
+  height: 24px;
+  max-width: 100%;
+}
+
+.wp-content .wp-block-group.has-background {
+  padding: 3rem;
+  border-radius: 20px;
+  margin: 4rem 0;
+}
+
+/* Micro-animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
