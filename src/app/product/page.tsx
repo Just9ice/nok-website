@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../shared.module.css";
 
 const products = [
   {
-    icon: "🔋",
+    image: "/battery.jpg",
     title: "Battery & Inverter Systems",
     features: [
       "High- and low-voltage lithium packs",
@@ -12,7 +13,7 @@ const products = [
     ],
   },
   {
-    icon: "☀️",
+    image: "/solar.jpg",
     title: "Solar Power Systems",
     features: [
       "Residential and commercial installations",
@@ -21,7 +22,7 @@ const products = [
     ],
   },
   {
-    icon: "🛵",
+    image: "/e-keke.jpg",
     title: "Electric Tricycles",
     features: [
       "Zero-emission last-mile transport",
@@ -30,7 +31,7 @@ const products = [
     ],
   },
   {
-    icon: "💻",
+    image: "/software-solutions.jpg",
     title: "Software Solutions",
     features: [
       "Fleet management dashboards",
@@ -39,7 +40,7 @@ const products = [
     ],
   },
   {
-    icon: "⚡",
+    image: "/product.jpg",
     title: "EV & LFP Chargers",
     features: [
       "Fast and standard charging options",
@@ -48,7 +49,7 @@ const products = [
     ],
   },
   {
-    icon: "🔦",
+    image: "/solar-lights.jpg",
     title: "Solar & Security Lights",
     features: [
       "All-in-one solar-powered units",
@@ -57,7 +58,7 @@ const products = [
     ],
   },
   {
-    icon: "🏭",
+    image: "/farming.jpg",
     title: "Industrial & Agricultural Equipment",
     features: [
       "Solar-powered irrigation pumps",
@@ -66,7 +67,7 @@ const products = [
     ],
   },
   {
-    icon: "❄️",
+    image: "/solar-cooling.jpg",
     title: "Solar-Powered Cooling",
     features: [
       "Off-grid refrigeration and cold storage",
@@ -97,57 +98,109 @@ const CheckIcon = () => (
 
 export default function ProductPage() {
   return (
-    <div className={styles.pageWrapper}>
-      <header className={styles.heroHeader}>
-        <div className={styles.badge}>Our Products</div>
-        <h1 className={styles.title}>
-          Clean Energy &amp; Mobility<br />Built for Real Life
+    <>
+      {/* Full-bleed Creative Hero Banner */}
+      <header
+        className={styles.heroHeader}
+        style={{
+          // Advanced multi-layer background: precise gradient fade over a fixed image
+          backgroundImage: "linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url(/product2.jpg)",
+          backgroundColor: "#020617",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          padding: "14rem 2rem 10rem",
+          margin: "0",
+          color: "white",
+          borderBottom: "1px solid rgba(20, 184, 166, 0.2)",
+        }}
+      >
+        <div
+          className={styles.badge}
+          style={{
+            borderColor: "rgba(45, 212, 191, 0.3)",
+            color: "#2dd4bf", // vibrant teal/cyan accent
+            background: "rgba(2, 6, 23, 0.4)",
+            backdropFilter: "blur(12px)",
+            boxShadow: "0 4px 20px rgba(45, 212, 191, 0.15)",
+          }}
+        >
+          Our Products
+        </div>
+        
+        <h1 className={styles.title} style={{ color: "white", textShadow: "0 8px 30px rgba(0,0,0,0.5)" }}>
+          Clean Energy &amp; Mobility<br />
+          <span style={{ color: "#2dd4bf", textShadow: "0 0 40px rgba(45, 212, 191, 0.4)" }}>Built for Real Life</span>
         </h1>
-        <p className={styles.introText}>
+        
+        <p className={styles.introText} style={{ color: "rgba(255,255,255,0.85)", textShadow: "0 4px 15px rgba(0,0,0,0.5)", fontSize: "1.25rem", maxWidth: "800px" }}>
           From reliable battery systems to electric vehicles and smart software,
           our product lineup is engineered to cut costs, reduce emissions, and
           keep life moving.
         </p>
-        <div className={styles.ctaGroup}>
-          <Link href="/contact" className={styles.primaryCta}>
+        
+        <div className={styles.ctaGroup} style={{ marginTop: "3.5rem" }}>
+          <Link 
+            href="/contact" 
+            className="rounded-xl px-8 py-4 font-semibold text-slate-900 transition-all duration-300"
+            style={{ backgroundColor: "#2dd4bf", boxShadow: "0 4px 20px rgba(45, 212, 191, 0.3)" }}
+          >
             Get a Quote
           </Link>
-          <Link href="/financing" className={styles.secondaryCta}>
-            Financing Options
+          <Link 
+            href="/financing" 
+            className="rounded-xl border border-white/30 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10"
+          >
+             Financing Options
           </Link>
         </div>
       </header>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Our Portfolio</h2>
-        <div className={styles.grid}>
-          {products.map((product) => (
-            <div
-              key={product.title}
-              className={styles.card}
-              style={{ textAlign: "left" }}
-            >
-              <div className={styles.cardIcon}>{product.icon}</div>
-              <h3
-                className={styles.cardTitle}
-                style={{ textAlign: "center" }}
+      {/* Main Content Area */}
+      <div className={styles.pageWrapper} style={{ paddingTop: "5rem" }}>
+        <section className={styles.section} style={{ marginTop: "1rem" }}>
+          <h2 className={styles.sectionTitle}>Our Portfolio</h2>
+          <div className={styles.grid}>
+            {products.map((product) => (
+              <div
+                key={product.title}
+                className={`${styles.card} group overflow-hidden`}
+                style={{ padding: 0, textAlign: "left" }}
               >
-                {product.title}
-              </h3>
-              <ul className={styles.featureList}>
-                {product.features.map((feat, i) => (
-                  <li key={i}>
-                    <span className={styles.checkIcon}>
-                      <CheckIcon />
-                    </span>
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+                {/* Premium Image Header */}
+                <div className="relative h-60 w-full overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  {/* Subtle dark gradient mapping to make text readable inside cover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                    <h3 className="text-2xl font-bold text-white mb-0 leading-tight text-shadow-md">
+                      {product.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Features List Section */}
+                <div className="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 h-full">
+                  <ul className={styles.featureList} style={{ marginTop: 0 }}>
+                    {product.features.map((feat, i) => (
+                      <li key={i} className="mb-3 flex items-start text-slate-600 dark:text-slate-300">
+                        <span className="mr-3 mt-1 flex-shrink-0">
+                          <CheckIcon />
+                        </span>
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
