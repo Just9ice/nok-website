@@ -30,7 +30,7 @@ export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen min-w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#020617] text-white">
       <header
-        className="relative overflow-hidden px-10 py-20 text-center text-white w-full"
+        className="relative overflow-hidden px-4 py-32 md:px-10 md:py-40 text-center text-white w-full"
         style={{
           backgroundImage: `linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url('/Windmill2.jpg')`,
           backgroundSize: "cover",
@@ -41,14 +41,14 @@ export default function AboutUsPage() {
       >
         <PageBackground />
 
-        <FadeIn className="relative z-10 mx-auto max-w-4xl rounded-3xl bg-white/15 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 text-center p-10 mb-16">
+        <FadeIn className="relative z-10 mx-auto max-w-4xl w-[90%] md:w-full rounded-3xl bg-white/15 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 text-center p-6 md:p-10 mb-16">
           <div className="inline-block rounded-full bg-teal-700/60 border border-white/30 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-white mb-6">
             About Us
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-lg mb-6">
             Powering Progress.
-            <br />
+            <br className="hidden sm:block" />
             Building Trust. Driving Change.
           </h1>
 

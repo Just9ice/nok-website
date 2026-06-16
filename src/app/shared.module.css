@@ -6,7 +6,13 @@
 .pageWrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8rem 2rem 6rem;
+  padding: 4rem 1.5rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .pageWrapper {
+    padding: 8rem 2rem 6rem;
+  }
 }
 
 /* Hero Header (unified across all pages) */
@@ -35,7 +41,7 @@
 }
 
 .title {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2rem, 5vw + 1rem, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.05em;
   line-height: 1.1;
@@ -138,7 +144,7 @@
 
 .card {
   background: var(--surface-color);
-  padding: 2.5rem 2rem;
+  padding: 1.5rem 1rem;
   border-radius: 20px;
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 20px rgba(0,0,0,0.02);
@@ -146,6 +152,12 @@
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2.5rem 2rem;
+  }
 }
 
 .card:hover {

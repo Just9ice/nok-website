@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nok Inc",
-  description: "Elevating your digital experience with unparalleled innovation.",
+  title: "NOK Inc | Sustainable Energy Solutions",
+  description: "At NOK Inc, we help homes, businesses, and communities take control of their energy and mobility with solar systems, smart batteries, electric transport, and modern cooling solutions.",
+  keywords: ["NOK Inc", "Sustainable Energy", "Solar Power", "Smart Batteries", "Electric Transport", "Cooling Solutions", "Energy Transition"],
 };
 
 export default function RootLayout({

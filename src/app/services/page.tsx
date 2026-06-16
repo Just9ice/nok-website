@@ -31,7 +31,7 @@ export default function ServicesPage() {
     <>
       {/* Full-bleed Hero Banner */}
       <header
-        className="relative overflow-hidden text-center text-white w-full"
+        className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[240px] md:pb-[140px]"
         style={{
           backgroundImage: "url(/green-service.jpg)",
           backgroundColor: "#062b21",
@@ -40,14 +40,13 @@ export default function ServicesPage() {
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           backgroundBlendMode: "overlay",
-          padding: "12rem 2rem 8rem",
           margin: "0",
           color: "white",
           borderBottom: "1px solid rgba(255,255,255,0.1)",
         }}
       >
         <PageBackground />
-        <FadeIn className="relative z-10 mx-auto max-w-4xl rounded-3xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 p-10 mb-16">
+        <FadeIn className="relative z-10 mx-auto max-w-4xl w-[90%] md:w-full rounded-3xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 p-6 md:p-10 mb-16">
           <div
             className={styles.badge}
             style={{
@@ -62,7 +61,7 @@ export default function ServicesPage() {
 
           <h1 className={styles.title} style={{ color: "white", textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}>
             We Support Every Solution
-            <br />
+            <br className="hidden sm:block" />
             From Start to Finish
           </h1>
 

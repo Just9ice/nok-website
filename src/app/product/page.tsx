@@ -103,7 +103,7 @@ export default function ProductPage() {
     <>
       {/* Full-bleed Creative Hero Banner */}
       <header
-        className="relative overflow-hidden text-center text-white w-full"
+        className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[260px] md:pb-[140px]"
         style={{
           backgroundImage: "linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url(/product2.jpg)",
           backgroundColor: "#020617",
@@ -111,14 +111,13 @@ export default function ProductPage() {
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
-          padding: "14rem 2rem 10rem",
           margin: "0",
           color: "white",
           borderBottom: "1px solid rgba(20, 184, 166, 0.2)",
         }}
       >
         <PageBackground />
-        <FadeIn className="relative z-10 mx-auto max-w-4xl rounded-3xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 p-10 mb-16">
+        <FadeIn className="relative z-10 mx-auto max-w-4xl w-[90%] md:w-full rounded-3xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 p-6 md:p-10 mb-16">
           <div
             className={styles.badge}
             style={{
@@ -133,7 +132,7 @@ export default function ProductPage() {
           </div>
         
         <h1 className={styles.title} style={{ color: "white", textShadow: "0 8px 30px rgba(0,0,0,0.5)" }}>
-          Clean Energy &amp; Mobility<br />
+          Clean Energy &amp; Mobility<br className="hidden sm:block" />
           <span style={{ color: "#2dd4bf", textShadow: "0 0 40px rgba(45, 212, 191, 0.4)" }}>Built for Real Life</span>
         </h1>
         
