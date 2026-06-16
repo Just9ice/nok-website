@@ -8,6 +8,7 @@ import {
   Smartphone,
   BarChart3,
   Globe,
+  Zap,
 } from "lucide-react";
 import Header from "@/components/Header";
 
@@ -174,11 +175,11 @@ export default function HomePage() {
 
             {/* CARD */}
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-              <Wallet className="mb-6 text-green-400" size={36} />
-              <h3 className="mb-4 text-2xl font-semibold"> Affordable </h3>
+              <Zap className="mb-6 text-green-400" size={36} />
+              <h3 className="mb-4 text-2xl font-semibold"> High Performance </h3>
               <p className="leading-8 text-white/65">
-                Reduce operational costs with efficient energy systems and
-                flexible financing options.
+                Experience uncompromised power and reliability with our
+                state-of-the-art energy technologies.
               </p>
             </div>
 
