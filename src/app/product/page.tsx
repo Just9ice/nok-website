@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../shared.module.css";
-import { FadeIn, SpotlightCard } from "../components/ClientPageEffects";
+import { FadeIn } from "../components/ClientPageEffects";
 import { PageBackground } from "../components/PageBackground";
 
 const products = [

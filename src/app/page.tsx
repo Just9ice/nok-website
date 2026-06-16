@@ -41,7 +41,7 @@ export default function HomePage() {
 
             {/* Title */}
             <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-              Powering The World's{" "}
+              Powering The World&apos;s{" "}
               <span className="bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent">
                 Energy Transition
               </span>
@@ -229,7 +229,7 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-white/70">
-              Let's help you reduce energy costs, improve reliability, and move
+              Let&apos;s help you reduce energy costs, improve reliability, and move
               towards a cleaner future with modern energy solutions.
             </p>
 
