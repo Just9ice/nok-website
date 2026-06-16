@@ -168,7 +168,7 @@ export default function ContactPage() {
                   stroke="#2dd4bf"
                   strokeWidth="3"
                   strokeLinecap="round"
-                  opacity="0.6"
+                  opacity="0.5"
                 />
               </span>
             </h1>
