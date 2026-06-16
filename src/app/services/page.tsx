@@ -31,14 +31,13 @@ export default function ServicesPage() {
     <>
       {/* Full-bleed Hero Banner */}
       <header
-        className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[240px] md:pb-[140px]"
+        className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[240px] md:pb-[140px] bg-local md:bg-fixed"
         style={{
           backgroundImage: "url(/green-service.jpg)",
           backgroundColor: "#062b21",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
           backgroundBlendMode: "overlay",
           margin: "0",
           color: "white",
@@ -60,7 +59,7 @@ export default function ServicesPage() {
           </div>
 
           <h1 className={styles.title} style={{ color: "white", textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}>
-            We Support Every Solution
+            We Support Every Solution{" "}
             <br className="hidden sm:block" />
             From Start to Finish
           </h1>
@@ -91,12 +90,12 @@ export default function ServicesPage() {
           <div className={styles.grid}>
             {services.map((item) => (
               <FadeIn key={item.title} className="relative">
-                <SpotlightCard className="p-8 bg-white/10 border border-white/20 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/40">
+                <SpotlightCard className="p-6 sm:p-8 bg-black/5 dark:bg-white/10 border border-slate-200 dark:border-white/20 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-white/40">
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-300 text-3xl">
                     {item.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{item.text}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{item.title}</h3>
+                  <p className="text-slate-600 dark:text-white/70 leading-relaxed">{item.text}</p>
                 </SpotlightCard>
               </FadeIn>
             ))}

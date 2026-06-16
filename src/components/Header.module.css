@@ -28,7 +28,7 @@
 .logo a {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--text-color);
+  color: #ffffff;
   text-decoration: none;
   letter-spacing: -0.05em;
   display: flex;
@@ -42,7 +42,7 @@
 }
 
 .link {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
   font-size: 0.95rem;
   text-decoration: none;
@@ -53,7 +53,7 @@
 
 .link:hover,
 .link.active {
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 .link::after {
@@ -77,11 +77,12 @@
 .ctaContainer {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .ctaButton {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: #ffffff;
+  color: #000000;
   padding: 0.75rem 1.5rem;
   border-radius: 99px;
   font-weight: 600;
@@ -93,11 +94,11 @@
 }
 
 .ctaButton:hover {
-  background-color: transparent;
-  color: var(--text-color);
-  border-color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
 }
 
 /* Dark mode specific tweak for CTA */
@@ -115,7 +116,7 @@
   display: none;
   background: transparent;
   border: none;
-  color: var(--text-color);
+  color: #ffffff;
   cursor: pointer;
   padding: 0.5rem;
   z-index: 52;
@@ -206,7 +207,7 @@
 
 @media (max-width: 768px) {
   .navLinks,
-  .ctaContainer {
+  .ctaButton {
     display: none;
   }
 

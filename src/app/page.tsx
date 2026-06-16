@@ -14,17 +14,16 @@ import Header from "@/components/Header";
 
 export default function HomePage() {
   return (
-    <main className="bg-[#071120] text-white overflow-x-hidden">
+    <main className="bg-background text-foreground overflow-x-hidden transition-colors duration-300">
       <Header />
       {/* Hero Section */}
       <section
-        className="relative flex min-h-screen items-center bg-cover bg-center"
+        className="relative flex min-h-screen items-center bg-cover bg-center bg-local md:bg-fixed"
         style={{
           backgroundImage: "url(/Windmill2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
           backgroundBlendMode: "overlay",
         }}
       >
@@ -40,7 +39,7 @@ export default function HomePage() {
             </div>
 
             {/* Title */}
-            <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl text-white">
               Powering The World&apos;s{" "}
               <span className="bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent">
                 Energy Transition
@@ -74,17 +73,17 @@ export default function HomePage() {
             {/* Stats */}
             <div className="mt-20 flex flex-wrap gap-10">
               <div>
-                <h3 className="text-4xl font-bold text-green-400">500+</h3>
-                <p className="mt-2 text-white/60">Installations</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-green-400">Industrial & Residential</h3>
+                <p className="mt-2 text-slate-200/80">Installations</p>
               </div>
 
               <div>
                 <h3 className="text-4xl font-bold text-green-400">98%</h3>
-                <p className="mt-2 text-white/60">Customer Satisfaction</p>
+                <p className="mt-2 text-slate-200/80">Customer Satisfaction</p>
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-green-400">24/7</h3>
-                <p className="mt-2 text-white/60">Support</p>
+                <p className="mt-2 text-slate-200/80">Support</p>
               </div>
             </div>
           </div>
@@ -104,36 +103,36 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {/* Cards */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-white/10">
+            <div className="group rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-500/10 text-green-400">
                 <SunMedium size={34} />
               </div>
               <h3 className="mb-4 text-2xl font-semibold"> Solar Power </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Highly efficient solar solutions designed for homes, businesses,
                 and industrial operations.
               </p>
             </div>
 
             {/* CARD */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-white/10">
+            <div className="group rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400">
                 <BatteryCharging size={34} />
               </div>
               <h3 className="mb-4 text-2xl font-semibold"> Smart Batteries </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Intelligent battery storage systems that keep your energy
                 stable, reliable, and uninterrupted.
               </p>
             </div>
 
             {/* CARD */}
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-white/10">
+            <div className="group rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
                 <Bike size={34} />
               </div>
               <h3 className="mb-4 text-2xl font-semibold">Electric Mobility</h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Cost-effective and sustainable transportation solutions for
                 modern urban mobility.
               </p>
@@ -154,60 +153,60 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {/* CARD */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <ShieldCheck className="mb-6 text-green-400" size={36} />
               <h3 className="mb-4 text-2xl font-semibold"> Reliable </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 High-quality systems, certified installation, and dependable
                 support whenever you need it.
               </p>
             </div>
 
             {/* Card */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <Wallet className="mb-6 text-green-400" size={36} />
               <h3 className="mb-4 text-2xl font-semibold"> Affordable </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Reduce operational costs with efficient energy systems and
                 flexible financing options.
               </p>
             </div>
 
             {/* CARD */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <Zap className="mb-6 text-green-400" size={36} />
               <h3 className="mb-4 text-2xl font-semibold"> High Performance </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Experience uncompromised power and reliability with our
                 state-of-the-art energy technologies.
               </p>
             </div>
 
             {/* CARD */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <Smartphone className="mb-6 text-green-400" size={36} />
               <h3 className="mb-4 text-2xl font-semibold">Smart Technology</h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Monitor and manage your systems using intuitive digital tools
                 and mobile apps.
               </p>
             </div>
 
             {/* CARD */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <BarChart3 className="mb-6 text-green-400" size={36} />
               <h3 className="mb-4 text-2xl font-semibold"> Scalable </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Start with what you need today and expand your energy
                 infrastructure over time.
               </p>
             </div>
 
             {/* CARD */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <Globe className="mb-6 text-green-400" size={36} />
               <h3 className="mb-4 text-2xl font-semibold"> Sustainable </h3>
-              <p className="leading-8 text-white/65">
+              <p className="leading-8 text-slate-600 dark:text-white/65">
                 Cleaner, quieter, and environmentally responsible solutions for
                 future-focused communities.
               </p>
@@ -217,18 +216,18 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 pb-28 lg:px-12">
-        <div className="mx-auto max-w-7xl rounded-[40px] border border-white/10 bg-gradient-to-br from-green-500 to-blue-500/10 p-12">
+      <section className="px-4 md:px-6 pb-28 lg:px-12">
+        <div className="mx-auto max-w-7xl rounded-[24px] md:rounded-[40px] border border-slate-200 dark:border-white/10 bg-gradient-to-br from-green-500/10 to-blue-500/10 dark:from-green-500 dark:to-blue-500/10 p-6 md:p-12">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
               Build The Future
             </p>
 
-            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight lg:text-5xl">
               Ready to Switch to Smarter Energy?
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/70">
+            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-white/70">
               Let&apos;s help you reduce energy costs, improve reliability, and move
               towards a cleaner future with modern energy solutions.
             </p>

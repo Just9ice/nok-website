@@ -23,25 +23,24 @@ const plans = [
 
 export default function FinancingPage() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#020617] text-white">
+    <div className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-background text-foreground transition-colors duration-300">
       <header
-        className="relative overflow-hidden px-10 py-20 text-center text-white w-full"
+        className="relative overflow-hidden px-4 md:px-10 py-20 text-center text-white w-full bg-local md:bg-fixed"
         style={{
           backgroundImage: `linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url('/financing.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
         }}
       >
         <PageBackground />
 
-        <FadeIn className="relative z-10 mx-auto max-w-4xl rounded-3xl bg-white/15 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 text-center p-8 mb-16">
-          <div className="inline-block rounded-full bg-teal-700/60 border border-white/30 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-white mb-6">
+        <FadeIn className="relative z-10 mx-auto max-w-4xl w-[90%] md:w-full rounded-3xl bg-white/15 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 text-center p-5 md:p-8 mb-16">
+          <div className="inline-block rounded-full bg-teal-700/60 border border-white/30 px-6 md:px-7 py-2 md:py-3 text-xs md:text-sm font-semibold uppercase tracking-wider text-white mb-6">
             Financing
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-lg mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight text-white drop-shadow-lg mb-6">
             Clean Energy Should Be
             <br />
             Accessible for Everyone
@@ -62,18 +61,18 @@ export default function FinancingPage() {
       </header>
 
       <section className={styles.section}>
-        <h2 className="font-black text-5xl text-white tracking-wide mb-12 text-center">
+        <h2 className="font-black text-4xl sm:text-5xl text-slate-900 dark:text-white tracking-wide mb-12 text-center">
           How It Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {plans.map((item) => (
             <FadeIn key={item.title} className="relative">
-              <SpotlightCard className="bg-white/10 p-8 border border-white/20 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/40">
+              <SpotlightCard className="p-6 sm:p-8 bg-black/5 dark:bg-white/10 border border-slate-200 dark:border-white/20 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-white/40">
                 <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-teal-700/10 flex items-center justify-center text-2xl text-teal-300">
                   {item.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-white/70 leading-relaxed">{item.text}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{item.title}</h3>
+                <p className="text-slate-600 dark:text-white/70 leading-relaxed">{item.text}</p>
               </SpotlightCard>
             </FadeIn>
           ))}

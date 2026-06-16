@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -67,6 +68,7 @@ export default function Header() {
         </nav>
         
         <div className={styles.ctaContainer}>
+          <ThemeToggle />
           <Link href="/contact" className={styles.ctaButton}>Get Started</Link>
         </div>
 

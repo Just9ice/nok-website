@@ -103,13 +103,12 @@ export default function ProductPage() {
     <>
       {/* Full-bleed Creative Hero Banner */}
       <header
-        className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[260px] md:pb-[140px]"
+        className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[260px] md:pb-[140px] bg-local md:bg-fixed"
         style={{
           backgroundImage: "linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url(/product2.jpg)",
           backgroundColor: "#020617",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
           margin: "0",
           color: "white",
