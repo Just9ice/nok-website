@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../shared.module.css";
+import { FadeIn, SpotlightCard } from "../components/ClientPageEffects";
+import { PageBackground } from "../components/PageBackground";
 
 const products = [
   {
@@ -101,32 +103,34 @@ export default function ProductPage() {
     <>
       {/* Full-bleed Creative Hero Banner */}
       <header
-        className={styles.heroHeader}
+        className="relative overflow-hidden text-center text-white w-full"
         style={{
-          // Advanced multi-layer background: precise gradient fade over a fixed image
           backgroundImage: "linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url(/product2.jpg)",
           backgroundColor: "#020617",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
           padding: "14rem 2rem 10rem",
           margin: "0",
           color: "white",
           borderBottom: "1px solid rgba(20, 184, 166, 0.2)",
         }}
       >
-        <div
-          className={styles.badge}
-          style={{
-            borderColor: "rgba(45, 212, 191, 0.3)",
-            color: "#2dd4bf", // vibrant teal/cyan accent
-            background: "rgba(2, 6, 23, 0.4)",
-            backdropFilter: "blur(12px)",
-            boxShadow: "0 4px 20px rgba(45, 212, 191, 0.15)",
-          }}
-        >
-          Our Products
-        </div>
+        <PageBackground />
+        <FadeIn className="relative z-10 mx-auto max-w-4xl rounded-3xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 p-10 mb-16">
+          <div
+            className={styles.badge}
+            style={{
+              borderColor: "rgba(45, 212, 191, 0.3)",
+              color: "#2dd4bf", // vibrant teal/cyan accent
+              background: "rgba(2, 6, 23, 0.4)",
+              backdropFilter: "blur(12px)",
+              boxShadow: "0 4px 20px rgba(45, 212, 191, 0.15)",
+            }}
+          >
+            Our Products
+          </div>
         
         <h1 className={styles.title} style={{ color: "white", textShadow: "0 8px 30px rgba(0,0,0,0.5)" }}>
           Clean Energy &amp; Mobility<br />
@@ -154,6 +158,7 @@ export default function ProductPage() {
              Financing Options
           </Link>
         </div>
+      </FadeIn>
       </header>
 
       {/* Main Content Area */}
@@ -162,41 +167,40 @@ export default function ProductPage() {
           <h2 className={styles.sectionTitle}>Our Portfolio</h2>
           <div className={styles.grid}>
             {products.map((product) => (
-              <div
-                key={product.title}
-                className={`${styles.card} group overflow-hidden`}
-                style={{ padding: 0, textAlign: "left" }}
-              >
-                {/* Premium Image Header */}
-                <div className="relative h-60 w-full overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  />
-                  {/* Subtle dark gradient mapping to make text readable inside cover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
-                    <h3 className="text-2xl font-bold text-white mb-0 leading-tight text-shadow-md">
-                      {product.title}
-                    </h3>
+              <FadeIn key={product.title} className="relative">
+                <div
+                  className={`${styles.card} group overflow-hidden`}
+                  style={{ padding: 0, textAlign: "left" }}
+                >
+                  {/* Premium Image Header */}
+                  <div className="relative h-60 w-full overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                      <h3 className="text-2xl font-bold text-white mb-0 leading-tight text-shadow-md">
+                        {product.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 h-full">
+                    <ul className={styles.featureList} style={{ marginTop: 0 }}>
+                      {product.features.map((feat, i) => (
+                        <li key={i} className="mb-3 flex items-start text-slate-600 dark:text-slate-300">
+                          <span className="mr-3 mt-1 flex-shrink-0">
+                            <CheckIcon />
+                          </span>
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-
-                {/* Features List Section */}
-                <div className="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 h-full">
-                  <ul className={styles.featureList} style={{ marginTop: 0 }}>
-                    {product.features.map((feat, i) => (
-                      <li key={i} className="mb-3 flex items-start text-slate-600 dark:text-slate-300">
-                        <span className="mr-3 mt-1 flex-shrink-0">
-                          <CheckIcon />
-                        </span>
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </section>

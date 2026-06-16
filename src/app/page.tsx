@@ -144,7 +144,7 @@ export default function HomePage() {
       {/* Why Choose Us */}
       <section className="px-6 pb-28 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-16 teext-center">
+          <div className="mb-16 text-center">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
               Why NOK?
             </p>
