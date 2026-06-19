@@ -103,7 +103,7 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {/* Cards */}
-            <div className="group rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
+            <Link href="/solutions/solar-power" className="group block rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-500/10 text-green-400">
                 <SunMedium size={34} />
               </div>
@@ -112,10 +112,10 @@ export default function HomePage() {
                 Highly efficient solar solutions designed for homes, businesses,
                 and industrial operations.
               </p>
-            </div>
+            </Link>
 
             {/* CARD */}
-            <div className="group rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
+            <Link href="/solutions/smart-batteries" className="group block rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400">
                 <BatteryCharging size={34} />
               </div>
@@ -124,10 +124,10 @@ export default function HomePage() {
                 Intelligent battery storage systems that keep your energy
                 stable, reliable, and uninterrupted.
               </p>
-            </div>
+            </Link>
 
             {/* CARD */}
-            <div className="group rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
+            <Link href="/solutions/electric-mobility" className="group block rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
                 <Bike size={34} />
               </div>
@@ -136,7 +136,7 @@ export default function HomePage() {
                 Cost-effective and sustainable transportation solutions for
                 modern urban mobility.
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
