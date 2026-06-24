@@ -156,7 +156,7 @@ export default function ContactPage() {
               </span>
             </div>
 
-            <h1 className="mx-auto mt-4 max-w-2xl text-4xl font-black leading-tight tracking-tight text-white drop-shadow-lg sm:text-5xl lg:text-6xl text-center">
+            <h1 className="mx-auto mt-4 max-w-2xl text-4xl font-black leading-tight tracking-tight text-white drop-shadow-lg sm:text-5xl lg:text-4xl text-center lg:p-3 sm:p-5">
               Let&rsquo;s Start a{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-teal-400">
@@ -164,12 +164,20 @@ export default function ContactPage() {
                 </span>
 
                 <svg
-                  d="<2 6 C50 2, 150 2, 198 6"
-                  stroke="#2dd4bf"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  opacity="0.5"
-                />
+                  viewBox="0 0 200 8"
+                  className="absolute -bottom-2 left-0 w-full z-0 h-3"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 6 C50 2, 150 2, 198 6"
+                    stroke="#2dd4bf"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    fill="none"
+                    opacity="0.5"
+                  />
+                </svg>
               </span>
             </h1>
 
@@ -391,7 +399,7 @@ export default function ContactPage() {
                   </Field>
 
                   {/* Submit row */}
-                  <div className="flex flex-col items-start gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex flex-col items-center text-center gap-4 pt-2 sm:flex-row sm:text-left sm:justify-between">
                     <p className="text-xs text-slate-500 dark:text-white/40">
                       We respond within 1 - 2 business days.
                     </p>
