@@ -25,6 +25,7 @@ export default function HomePage() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundBlendMode: "overlay",
+          borderRadius: "30px",
         }}
       >
         {/* Overlay */}
