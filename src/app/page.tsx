@@ -283,11 +283,11 @@ export default function HomePage() {
               Build The Future
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight lg:text-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight lg:text-5xl dark:text-slate-900">
               Ready to Switch to Smarter Energy?
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-white/70">
+            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-700">
               Let&apos;s help you reduce energy costs, improve reliability, and
               move towards a cleaner future with modern energy solutions.
             </p>
