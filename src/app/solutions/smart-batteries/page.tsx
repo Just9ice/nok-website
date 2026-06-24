@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { BatteryCharging, ArrowRight, ShieldCheck } from "lucide-react";
 
@@ -75,9 +76,9 @@ export default function SmartBatteriesPage() {
             className="rounded-3xl bg-gradient-to-br from-blue-500/20 to-indigo-500/5 p-8 border border-white/10 backdrop-blur-md"
           >
             <p className="text-xl leading-relaxed text-slate-800 dark:text-white/85">
-              "Our smart battery systems seamlessly integrate with existing
+              &ldquo;Our smart battery systems seamlessly integrate with existing
               solar setups or the grid, ensuring critical appliances and
-              business operations are never disrupted."
+              business operations are never disrupted.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -104,7 +105,7 @@ export default function SmartBatteriesPage() {
             },
             {
               type: "video",
-              src: "/projects/battery-video-1.mp4",
+              src: "/projects/batteries.mp4",
               alt: "Industrial Battery Rack",
             },
             {
@@ -122,20 +123,22 @@ export default function SmartBatteriesPage() {
               className="group relative aspect-video sm:aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
             >
               {media.type === "image" ? (
-                <img
+                <Image
                   src={media.src}
                   alt={media.alt}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-110"
                 />
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 bg-black/5 dark:bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-widest text-center mb-2">
-                    {media.alt} (Video)
-                  </p>
-                  <p className="text-[10px] font-mono opacity-60 text-center">
-                    Add '{media.src}' to public/projects
-                  </p>
-                </div>
+                <video
+                  src={media.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={true}
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
               )}
             </motion.div>
           ))}

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SunMedium, ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -76,9 +77,9 @@ export default function SolarPowerPage() {
             className="rounded-3xl bg-gradient-to-br from-green-500/20 to-blue-500/5 p-8 border border-white/10 backdrop-blur-md"
           >
             <p className="text-xl leading-relaxed text-slate-800 dark:text-white/85">
-              "We provide end-to-end solar installations including system
+              &ldquo;We provide end-to-end solar installations including system
               design, tier-1 panel procurement, and professional engineering to
-              ensure maximum yield in any weather conditions."
+              ensure maximum yield in any weather conditions.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -105,7 +106,7 @@ export default function SolarPowerPage() {
             },
             {
               type: "video",
-              src: "/projects/solar-video-1.mp4",
+              src: "/projects/solar.mp4",
               alt: "Industrial Solar Array Drone View",
             },
             {
@@ -115,13 +116,13 @@ export default function SolarPowerPage() {
             },
             {
               type: "image",
-              src: "/projects/solar-image-3.jpg",
+              src: "/projects/solar-panel-2.jpeg",
               alt: "Solar Inverter Setup",
             },
             {
-              type: "video",
-              src: "/projects/solar-video-2.mp4",
-              alt: "Time lapse of installation",
+              type: "image",
+              src: "/projects/solar-panel-1.jpeg",
+              alt: "Installed Solar Panel",
             },
             {
               type: "image",
@@ -138,20 +139,22 @@ export default function SolarPowerPage() {
               className="group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
             >
               {media.type === "image" ? (
-                <img
+                <Image
                   src={media.src}
                   alt={media.alt}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-110"
                 />
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 bg-black/5 dark:bg-white/5">
-                  <p className="text-xs uppercase tracking-widest text-center px-4 mb-2">
-                    {media.alt} (Video)
-                  </p>
-                  <p className="text-[10px] font-mono opacity-60">
-                    Add '{media.src}' to public/projects
-                  </p>
-                </div>
+                <video
+                  src={media.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={true}
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
               )}
             </motion.div>
           ))}

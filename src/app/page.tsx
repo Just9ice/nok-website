@@ -73,7 +73,9 @@ export default function HomePage() {
             {/* Stats */}
             <div className="mt-20 flex flex-wrap gap-10">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-green-400">Industrial & Residential</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-green-400">
+                  Industrial & Residential
+                </h3>
                 <p className="mt-2 text-slate-200/80">Installations</p>
               </div>
 
@@ -103,39 +105,78 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {/* Cards */}
-            <Link href="/solutions/solar-power" className="group block rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-500/10 text-green-400">
-                <SunMedium size={34} />
+            <Link
+              href="/solutions/solar-power"
+              className="group relative overflow-hidden block rounded-3xl border border-slate-200 dark:border-white/10 p-6 sm:p-8 transition duration-300 hover:-translate-y-2 hover:border-green-400/30 shadow-lg shadow-black/5"
+            >
+              <div
+                className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-110"
+                style={{
+                  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)), url('/solar-panel-4.jpeg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="relative z-10">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-green-400 backdrop-blur-md">
+                  <SunMedium size={34} />
+                </div>
+                <h3 className="mb-4 text-2xl font-semibold text-white"> Solar Power </h3>
+                <p className="leading-8 text-white/75">
+                  Highly efficient solar solutions designed for homes, businesses,
+                  and industrial operations.
+                </p>
               </div>
-              <h3 className="mb-4 text-2xl font-semibold"> Solar Power </h3>
-              <p className="leading-8 text-slate-600 dark:text-white/65">
-                Highly efficient solar solutions designed for homes, businesses,
-                and industrial operations.
-              </p>
             </Link>
 
             {/* CARD */}
-            <Link href="/solutions/smart-batteries" className="group block rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400">
-                <BatteryCharging size={34} />
+            <Link
+              href="/solutions/smart-batteries"
+              className="group relative overflow-hidden block rounded-3xl border border-slate-200 dark:border-white/10 p-6 sm:p-8 transition duration-300 hover:-translate-y-2 hover:border-blue-400/30 shadow-lg shadow-black/5"
+            >
+              <div
+                className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-110"
+                style={{
+                  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)), url('/projects/batteries.jpeg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="relative z-10">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-blue-400 backdrop-blur-md">
+                  <BatteryCharging size={34} />
+                </div>
+                <h3 className="mb-4 text-2xl font-semibold text-white"> Smart Batteries </h3>
+                <p className="leading-8 text-white/75">
+                  Intelligent battery storage systems that keep your energy
+                  stable, reliable, and uninterrupted.
+                </p>
               </div>
-              <h3 className="mb-4 text-2xl font-semibold"> Smart Batteries </h3>
-              <p className="leading-8 text-slate-600 dark:text-white/65">
-                Intelligent battery storage systems that keep your energy
-                stable, reliable, and uninterrupted.
-              </p>
             </Link>
 
             {/* CARD */}
-            <Link href="/solutions/electric-mobility" className="group block rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-green-400/30 hover:bg-black/10 dark:hover:bg-white/10">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
-                <Bike size={34} />
+            <Link
+              href="/solutions/electric-mobility"
+              className="group relative overflow-hidden block rounded-3xl border border-slate-200 dark:border-white/10 p-6 sm:p-8 transition duration-300 hover:-translate-y-2 hover:border-purple-400/30 shadow-lg shadow-black/5"
+            >
+              <div
+                className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-110"
+                style={{
+                  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)), url('/projects/keke-cargo.jpeg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="relative z-10">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-purple-400 backdrop-blur-md">
+                  <Bike size={34} />
+                </div>
+                <h3 className="mb-4 text-2xl font-semibold text-white">Electric Mobility</h3>
+                <p className="leading-8 text-white/75">
+                  Cost-effective and sustainable transportation solutions for
+                  modern urban mobility.
+                </p>
               </div>
-              <h3 className="mb-4 text-2xl font-semibold">Electric Mobility</h3>
-              <p className="leading-8 text-slate-600 dark:text-white/65">
-                Cost-effective and sustainable transportation solutions for
-                modern urban mobility.
-              </p>
             </Link>
           </div>
         </div>
@@ -175,7 +216,10 @@ export default function HomePage() {
             {/* CARD */}
             <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
               <Zap className="mb-6 text-green-400" size={36} />
-              <h3 className="mb-4 text-2xl font-semibold"> High Performance </h3>
+              <h3 className="mb-4 text-2xl font-semibold">
+                {" "}
+                High Performance{" "}
+              </h3>
               <p className="leading-8 text-slate-600 dark:text-white/65">
                 Experience uncompromised power and reliability with our
                 state-of-the-art energy technologies.
@@ -217,7 +261,15 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="px-4 md:px-6 pb-28 lg:px-12">
-        <div className="mx-auto max-w-7xl rounded-[24px] md:rounded-[40px] border border-slate-200 dark:border-white/10 bg-gradient-to-br from-green-500/10 to-blue-500/10 dark:from-green-500 dark:to-blue-500/10 p-6 md:p-12">
+        <div
+          className="mx-auto max-w-7xl rounded-[24px] md:rounded-[40px] border border-slate-200 dark:border-white/10 bg-gradient-to-br from-green-500/10 to-blue-500/10 dark:from-green-500 dark:to-blue-500/10 p-6 md:p-12"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(15, 118, 110, 0.55)), url('/projects/solar-panels.jpeg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "right center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <div className="max-w-3xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-green-400">
               Build The Future
@@ -228,8 +280,8 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-white/70">
-              Let&apos;s help you reduce energy costs, improve reliability, and move
-              towards a cleaner future with modern energy solutions.
+              Let&apos;s help you reduce energy costs, improve reliability, and
+              move towards a cleaner future with modern energy solutions.
             </p>
 
             <div className="mt-10">

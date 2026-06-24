@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Bike, ArrowRight, Zap } from "lucide-react";
 
@@ -26,13 +27,15 @@ export default function ElectricMobilityPage() {
             <Bike size={40} />
           </div>
           <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-            The Future of {" "}
+            The Future of{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
               Mobility
             </span>
           </h1>
           <p className="mt-8 text-lg leading-8 text-slate-600 dark:text-white/70 max-w-2xl mx-auto">
-            Cost-effective and sustainable transportation solutions for modern urban mobility. Move faster, cleaner, and cheaper with NOK's electric fleet offerings.
+            Cost-effective and sustainable transportation solutions for modern
+            urban mobility. Move faster, cleaner, and cheaper with NOK&apos;s
+            electric fleet offerings.
           </p>
         </motion.div>
       </section>
@@ -46,7 +49,9 @@ export default function ElectricMobilityPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold lg:text-4xl mb-6">Drive Clean, Drive Smart</h2>
+            <h2 className="text-3xl font-bold lg:text-4xl mb-6">
+              Drive Clean, Drive Smart
+            </h2>
             <div className="space-y-6">
               {[
                 "Zero emissions for a greener city",
@@ -56,7 +61,9 @@ export default function ElectricMobilityPage() {
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <Zap className="text-purple-500 shrink-0" />
-                  <p className="font-medium text-slate-700 dark:text-slate-300">{text}</p>
+                  <p className="font-medium text-slate-700 dark:text-slate-300">
+                    {text}
+                  </p>
                 </div>
               ))}
             </div>
@@ -70,7 +77,9 @@ export default function ElectricMobilityPage() {
             className="rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/5 p-8 border border-white/10 backdrop-blur-md"
           >
             <p className="text-xl leading-relaxed text-slate-800 dark:text-white/85">
-              "We provide an entire ecosystem — from high-performance electric bikes to reliable charging stations, empowering you to transition seamlessly to electric mobility."
+              &ldquo;We provide an entire ecosystem — from high-performance electric
+              bikes to reliable charging stations, empowering you to transition
+              seamlessly to electric mobility.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -79,17 +88,37 @@ export default function ElectricMobilityPage() {
       {/* Project Media Showcase */}
       <section className="px-6 py-20 lg:px-12 max-w-7xl mx-auto border-t border-slate-200 dark:border-white/10">
         <div className="text-center mb-16">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-purple-400">Our Work</p>
-          <h2 className="text-4xl font-bold lg:text-5xl">Electric Fleet in the City</h2>
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-purple-400">
+            Our Work
+          </p>
+          <h2 className="text-4xl font-bold lg:text-5xl">
+            Electric Fleet in the City
+          </h2>
         </div>
 
         {/* Gallery Grid (Placeholders for public/projects) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { type: "image", src: "/projects/ev-image-1.jpg", alt: "Electric Bike Fleet" },
-            { type: "video", src: "/projects/ev-video-1.mp4", alt: "EV on the Commute" },
-            { type: "image", src: "/projects/ev-image-2.jpg", alt: "Charging Station Setup" },
-            { type: "image", src: "/projects/ev-image-3.jpg", alt: "Delivery Bikes" },
+            {
+              type: "image",
+              src: "/projects/ev-image-1.jpg",
+              alt: "Electric Bike Fleet",
+            },
+            {
+              type: "video",
+              src: "/projects/ev.mp4",
+              alt: "EV on the Commute",
+            },
+            {
+              type: "image",
+              src: "/projects/ev-image-2.jpg",
+              alt: "Charging Station Setup",
+            },
+            {
+              type: "image",
+              src: "/projects/ev-image-3.jpg",
+              alt: "Delivery Bikes",
+            },
           ].map((media, idx) => (
             <motion.div
               key={idx}
@@ -97,15 +126,25 @@ export default function ElectricMobilityPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
+              className={`group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10${idx === 3 ? " sm:col-start-1 lg:col-start-2" : ""}`}
             >
               {media.type === "image" ? (
-                <img src={media.src} alt={media.alt} className="w-full h-full object-cover transition duration-500 group-hover:scale-110" />
+                <Image
+                  src={media.src}
+                  alt={media.alt}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-110"
+                />
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 bg-black/5 dark:bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-widest text-center mb-2">{media.alt} (Video)</p>
-                  <p className="text-[10px] font-mono opacity-60 text-center">Add '{media.src}' to public/projects</p>
-                </div>
+                <video
+                  src={media.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={true}
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
               )}
             </motion.div>
           ))}
@@ -119,7 +158,8 @@ export default function ElectricMobilityPage() {
             Ready to upgrade your commute?
           </h2>
           <p className="text-lg text-slate-600 dark:text-white/70 max-w-2xl mx-auto mb-10">
-            Contact us today to explore our electric mobility products and find the right fit for your personal or business logistics.
+            Contact us today to explore our electric mobility products and find
+            the right fit for your personal or business logistics.
           </p>
           <Link
             href="/contact"
