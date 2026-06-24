@@ -121,10 +121,13 @@ export default function HomePage() {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-green-400 backdrop-blur-md">
                   <SunMedium size={34} />
                 </div>
-                <h3 className="mb-4 text-2xl font-semibold text-white"> Solar Power </h3>
+                <h3 className="mb-4 text-2xl font-semibold text-white">
+                  {" "}
+                  Solar Power{" "}
+                </h3>
                 <p className="leading-8 text-white/75">
-                  Highly efficient solar solutions designed for homes, businesses,
-                  and industrial operations.
+                  Highly efficient solar solutions designed for homes,
+                  businesses, and industrial operations.
                 </p>
               </div>
             </Link>
@@ -146,7 +149,10 @@ export default function HomePage() {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-blue-400 backdrop-blur-md">
                   <BatteryCharging size={34} />
                 </div>
-                <h3 className="mb-4 text-2xl font-semibold text-white"> Smart Batteries </h3>
+                <h3 className="mb-4 text-2xl font-semibold text-white">
+                  {" "}
+                  Smart Batteries{" "}
+                </h3>
                 <p className="leading-8 text-white/75">
                   Intelligent battery storage systems that keep your energy
                   stable, reliable, and uninterrupted.
@@ -171,7 +177,9 @@ export default function HomePage() {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-purple-400 backdrop-blur-md">
                   <Bike size={34} />
                 </div>
-                <h3 className="mb-4 text-2xl font-semibold text-white">Electric Mobility</h3>
+                <h3 className="mb-4 text-2xl font-semibold text-white">
+                  Electric Mobility
+                </h3>
                 <p className="leading-8 text-white/75">
                   Cost-effective and sustainable transportation solutions for
                   modern urban mobility.
@@ -275,11 +283,11 @@ export default function HomePage() {
               Build The Future
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight lg:text-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight lg:text-5xl text-slate-900">
               Ready to Switch to Smarter Energy?
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-white/70">
+            <p className="mt-6 text-lg leading-8 text-slate-700">
               Let&apos;s help you reduce energy costs, improve reliability, and
               move towards a cleaner future with modern energy solutions.
             </p>
