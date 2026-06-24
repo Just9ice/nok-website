@@ -11,7 +11,7 @@ export default function Footer() {
             <Image src="/NOK-Inc-Company-LogoFinal-02-1.webp" alt="Nok Inc. Logo" width={150} height={50} style={{ objectFit: 'contain' }} />
           </Link>
           <p className={styles.description}>
-            Elevating your digital experience with unparalleled innovation.
+            Powering the transition to sustainable energy and modern mobility for a cleaner, smarter future.
           </p>
         </div>
         <div className={styles.column}>
