@@ -47,7 +47,7 @@ function InfoCard({
   );
 
   return href ? (
-    <a href={href} className="no-underline">
+    <a href={href} className="no-underline block h-full w-full">
       {content}
     </a>
   ) : (
@@ -191,10 +191,10 @@ export default function ContactPage() {
           {/* Info Cards */}
 
           <div className="mb-16 mx-auto max-w-2xl grid grid-cols-1 gap-4 sm:grid-cols-2 justify-center">
-            <FadeIn delay={0.5}>
+            <FadeIn delay={0.1} className="h-full">
               <InfoCard
                 href="mailto:info@nokinc.com"
-                className="lg:mb-5 xl:mb-8 sm:mb-5"
+                className="lg:mb-5 xl:mb-8 sm:mb-5 h-full block"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -215,10 +215,10 @@ export default function ContactPage() {
                 value="info@nokinc.com"
               />
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn delay={0.2} className="h-full">
               <InfoCard
-                href="tel:+12407538561"
-                className="lg:mb-5 xl:mb-8 sm:mb-5"
+                href="tel:+12403946641"
+                className="lg:mb-5 xl:mb-8 sm:mb-5 h-full block"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,30 @@ export default function ContactPage() {
                   </svg>
                 }
                 title="Call Us"
-                value="+1 (240) 753-8561"
+                value="+1 (240) 394-6641"
+              />
+            </FadeIn>
+            <FadeIn delay={0.3} className="sm:col-span-2 sm:mx-auto w-full sm:w-[calc(50%-0.5rem)] h-full">
+              <InfoCard
+                href="tel:+2349038938856"
+                className="lg:mb-5 xl:mb-8 sm:mb-5 h-full block"
+                icon={
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.07 3.38 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z" />
+                  </svg>
+                }
+                title="Call Us"
+                value="+234-903-893-8856"
               />
             </FadeIn>
           </div>
