@@ -77,9 +77,9 @@ export default function ElectricMobilityPage() {
             className="rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/5 p-8 border border-white/10 backdrop-blur-md"
           >
             <p className="text-xl leading-relaxed text-slate-800 dark:text-white/85">
-              &ldquo;We provide an entire ecosystem — from high-performance electric
-              bikes to reliable charging stations, empowering you to transition
-              seamlessly to electric mobility.&rdquo;
+              &ldquo;We provide an entire ecosystem — from high-performance
+              electric bikes to reliable charging stations, empowering you to
+              transition seamlessly to electric mobility.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -117,6 +117,11 @@ export default function ElectricMobilityPage() {
             {
               type: "image",
               src: "/projects/ev-image-3.jpg",
+              alt: "Cargo Bikes Delivery",
+            },
+            {
+              type: "image",
+              src: "/projects/ev-cargo.jpeg",
               alt: "Delivery Bikes",
             },
           ].map((media, idx) => (
@@ -126,7 +131,7 @@ export default function ElectricMobilityPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10${idx === 3 ? " sm:col-start-1 lg:col-start-2" : ""}`}
+              className="group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
             >
               {media.type === "image" ? (
                 <Image
