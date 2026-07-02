@@ -120,6 +120,11 @@ export default function ElectricMobilityPage() {
               alt: "Cargo Bikes Delivery",
             },
             {
+              type: "video",
+              src: "/projects/keke-assembly.mp4",
+              alt: "Keke Assembling",
+            },
+            {
               type: "image",
               src: "/projects/ev-cargo.jpeg",
               alt: "Delivery Bikes",
