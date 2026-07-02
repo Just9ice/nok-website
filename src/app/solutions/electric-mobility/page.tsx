@@ -15,28 +15,51 @@ export default function ElectricMobilityPage() {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 px-6 lg:px-12 bg-black/5 dark:bg-white/5">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-purple-400/20 via-background to-background" />
+      <section className="relative flex flex-col items-center justify-center overflow-hidden min-h-[90vh] pt-32 pb-20 px-6 lg:px-12">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 z-0 w-full h-full object-cover"
+        >
+          <source src="/projects/ev-warehousing.mp4" type="video/mp4" />
+        </video>
+
+        {/* Cinematic Overlays */}
+        {/* Darkens the overall video slightly */}
+        <div className="absolute inset-0 z-0 bg-black/40" />
+        {/* Fades the bottom into the page background */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
+        {/* Centers a dark blur specifically behind the text for maximum readability */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/80 via-black/20 to-transparent" />
+
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="relative z-10 mx-auto max-w-4xl text-center"
+          className="relative z-10 mx-auto max-w-4xl text-center flex flex-col items-center"
         >
-          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-purple-500/10 text-purple-400">
-            <Bike size={40} />
+          {/* Glassmorphic Icon */}
+          <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-2xl">
+            <Bike size={40} className="drop-shadow-md" />
           </div>
-          <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+          
+          <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl text-white drop-shadow-xl">
             The Future of{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent filter drop-shadow-lg">
               Mobility
             </span>
           </h1>
-          <p className="mt-8 text-lg leading-8 text-slate-600 dark:text-white/70 max-w-2xl mx-auto">
-            Cost-effective and sustainable transportation solutions for modern
-            urban mobility. Move faster, cleaner, and cheaper with NOK&apos;s
-            electric fleet offerings.
-          </p>
+          
+          <div className="mt-8 max-w-2xl mx-auto rounded-3xl bg-black/20 backdrop-blur-sm border border-white/10 p-6 md:p-8">
+            <p className="text-lg md:text-xl leading-relaxed text-white/90">
+              Cost-effective and sustainable transportation solutions for modern
+              urban mobility. Move faster, cleaner, and cheaper with NOK&apos;s
+              electric fleet offerings.
+            </p>
+          </div>
         </motion.div>
       </section>
 
