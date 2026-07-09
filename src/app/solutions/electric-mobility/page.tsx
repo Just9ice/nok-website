@@ -1,10 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Bike, ArrowRight, Zap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Bike,
+  ArrowRight,
+  Zap,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+
+const mediaItems = [
+  {
+    type: "image",
+    src: "/projects/ev-image-1.jpg",
+    alt: "Electric Bike Fleet",
+  },
+  { type: "video", src: "/projects/ev.mp4", alt: "EV on the Commute" },
+  {
+    type: "image",
+    src: "/projects/ev-image-2.jpg",
+    alt: "Charging Station Setup",
+  },
+  {
+    type: "image",
+    src: "/projects/ev-image-3.jpg",
+    alt: "Cargo Bikes Delivery",
+  },
+  { type: "video", src: "/projects/keke-assembly.mp4", alt: "Keke Assembling" },
+  { type: "image", src: "/projects/ev-cargo.jpeg", alt: "Delivery Bikes" },
+  { type: "video", src: "/projects/frame-keke.mp4", alt: "Frame Keke" },
+  { type: "video", src: "/projects/keks-assembly.mp4", alt: "Keke Assembling" },
+  { type: "video", src: "/projects/keks.mp4", alt: "Keke" },
+  { type: "video", src: "/projects/keke-build.mp4", alt: "Keke Build" },
+  { type: "video", src: "/projects/ev-assembly-2.mp4", alt: "EV Assembly 2" },
+  { type: "video", src: "/projects/keks-build.mp4", alt: "Keke Build" },
+];
 
 export default function ElectricMobilityPage() {
   const fadeIn = {
@@ -12,10 +46,58 @@ export default function ElectricMobilityPage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const openLightbox = (idx: number) => setLightboxIndex(idx);
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+  const goPrev = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev === null ? null : (prev - 1 + mediaItems.length) % mediaItems.length,
+    );
+  }, []);
+
+  const goNext = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev === null ? null : (prev + 1) % mediaItems.length,
+    );
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") goPrev();
+      if (e.key === "ArrowRight") goNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxIndex, closeLightbox, goPrev, goNext]);
+
+  // Pause / replay video when lightbox item changes
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch(() => {});
+    }
+  }, [lightboxIndex]);
+
+  // Prevent body scroll while lightbox is open
+  useEffect(() => {
+    document.body.style.overflow = lightboxIndex !== null ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxIndex]);
+
+  const activeItem = lightboxIndex !== null ? mediaItems[lightboxIndex] : null;
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center overflow-hidden min-h-[90vh] pt-32 pb-20 px-6 lg:px-12">
+      <section className="relative flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 px-6 lg:px-12 bg-black/5 dark:bg-white/5">
         {/* Background Video */}
         <video
           autoPlay
@@ -24,42 +106,33 @@ export default function ElectricMobilityPage() {
           playsInline
           className="absolute inset-0 z-0 w-full h-full object-cover"
         >
-          <source src="/projects/ev-warehousing.mp4" type="video/mp4" />
+          <source src="/videos/ev-warehousing.mp4" type="video/mp4" />
         </video>
 
-        {/* Cinematic Overlays */}
-        {/* Darkens the overall video slightly */}
-        <div className="absolute inset-0 z-0 bg-black/40" />
-        {/* Fades the bottom into the page background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
-        {/* Centers a dark blur specifically behind the text for maximum readability */}
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/80 via-black/20 to-transparent" />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 z-0 bg-black/60" />
 
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-purple-400/20 via-background to-background" />
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="relative z-10 mx-auto max-w-4xl text-center flex flex-col items-center"
+          className="relative z-10 mx-auto max-w-4xl text-center"
         >
-          {/* Glassmorphic Icon */}
-          <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-2xl">
-            <Bike size={40} className="drop-shadow-md" />
+          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-purple-500/10 text-purple-400">
+            <Bike size={40} />
           </div>
-          
-          <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl text-white drop-shadow-xl">
+          <h1 className="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             The Future of{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent filter drop-shadow-lg">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
               Mobility
             </span>
           </h1>
-          
-          <div className="mt-8 max-w-2xl mx-auto rounded-3xl bg-black/20 backdrop-blur-sm border border-white/10 p-6 md:p-8">
-            <p className="text-lg md:text-xl leading-relaxed text-white/90">
-              Cost-effective and sustainable transportation solutions for modern
-              urban mobility. Move faster, cleaner, and cheaper with NOK&apos;s
-              electric fleet offerings.
-            </p>
-          </div>
+          <p className="mt-8 text-lg leading-8 text-slate-600 dark:text-white/70 max-w-2xl mx-auto">
+            Cost-effective and sustainable transportation solutions for modern
+            urban mobility. Move faster, cleaner, and cheaper with NOK&apos;s
+            electric fleet offerings.
+          </p>
         </motion.div>
       </section>
 
@@ -119,47 +192,18 @@ export default function ElectricMobilityPage() {
           </h2>
         </div>
 
-        {/* Gallery Grid (Placeholders for public/projects) */}
+        {/* Gallery Grid – click any card to open the lightbox */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              type: "image",
-              src: "/projects/ev-image-1.jpg",
-              alt: "Electric Bike Fleet",
-            },
-            {
-              type: "video",
-              src: "/projects/ev.mp4",
-              alt: "EV on the Commute",
-            },
-            {
-              type: "image",
-              src: "/projects/ev-image-2.jpg",
-              alt: "Charging Station Setup",
-            },
-            {
-              type: "image",
-              src: "/projects/ev-image-3.jpg",
-              alt: "Cargo Bikes Delivery",
-            },
-            {
-              type: "video",
-              src: "/projects/keke-assembly.mp4",
-              alt: "Keke Assembling",
-            },
-            {
-              type: "image",
-              src: "/projects/ev-cargo.jpeg",
-              alt: "Delivery Bikes",
-            },
-          ].map((media, idx) => (
-            <motion.div
+          {mediaItems.map((media, idx) => (
+            <motion.button
               key={idx}
+              onClick={() => openLightbox(idx)}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
+              className="group relative aspect-square overflow-hidden rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+              aria-label={`Open ${media.alt}`}
             >
               {media.type === "image" ? (
                 <Image
@@ -175,11 +219,16 @@ export default function ElectricMobilityPage() {
                   muted
                   loop
                   playsInline
-                  controls={true}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110 pointer-events-none"
                 />
               )}
-            </motion.div>
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-semibold bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
+                  {media.type === "video" ? "▶ Play" : "⛶ View"}
+                </span>
+              </div>
+            </motion.button>
           ))}
         </div>
       </section>
@@ -202,6 +251,130 @@ export default function ElectricMobilityPage() {
           </Link>
         </div>
       </section>
+
+      {/* ── Lightbox Modal ── */}
+      <AnimatePresence>
+        {activeItem && lightboxIndex !== null && (
+          <motion.div
+            key="lightbox-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={closeLightbox}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors"
+              aria-label="Close lightbox"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Counter & label */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 pointer-events-none">
+              <span className="text-white/50 text-xs tracking-widest uppercase">
+                {lightboxIndex + 1} / {mediaItems.length}
+              </span>
+              <span className="text-white font-semibold text-sm">
+                {activeItem.alt}
+              </span>
+            </div>
+
+            {/* Left arrow */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goPrev();
+              }}
+              className="absolute left-3 md:left-6 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-purple-500/70 border border-white/20 text-white transition-all duration-200 hover:scale-110"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={26} />
+            </button>
+
+            {/* Right arrow */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goNext();
+              }}
+              className="absolute right-3 md:right-6 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-purple-500/70 border border-white/20 text-white transition-all duration-200 hover:scale-110"
+              aria-label="Next"
+            >
+              <ChevronRight size={26} />
+            </button>
+
+            {/* Media container */}
+            <motion.div
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full h-full max-w-5xl max-h-[85vh] mx-14 md:mx-24 flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {activeItem.type === "image" ? (
+                <div className="relative w-full h-full">
+                  <Image
+                    src={activeItem.src}
+                    alt={activeItem.alt}
+                    fill
+                    className="object-contain rounded-2xl"
+                    sizes="(max-width: 768px) 100vw, 80vw"
+                    priority
+                  />
+                </div>
+              ) : (
+                <video
+                  ref={videoRef}
+                  src={activeItem.src}
+                  controls
+                  playsInline
+                  className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain"
+                  style={{ width: "100%", height: "100%" }}
+                />
+              )}
+            </motion.div>
+
+            {/* Thumbnail strip */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 px-4 overflow-x-auto">
+              {mediaItems.map((item, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLightboxIndex(i);
+                  }}
+                  className={`relative flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                    i === lightboxIndex
+                      ? "border-purple-400 scale-110"
+                      : "border-white/20 opacity-50 hover:opacity-80"
+                  }`}
+                  aria-label={`Go to ${item.alt}`}
+                >
+                  {item.type === "image" ? (
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-white/10 flex items-center justify-center text-white text-xs">
+                      ▶
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
