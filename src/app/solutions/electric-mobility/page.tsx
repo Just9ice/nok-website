@@ -32,11 +32,15 @@ const mediaItems = [
   },
   { type: "video", src: "/projects/keke-assembly.mp4", alt: "Keke Assembling" },
   { type: "image", src: "/projects/ev-cargo.jpeg", alt: "Delivery Bikes" },
-  { type: "video", src: "/projects/frame-keke.mp4", alt: "Frame Keke" },
-  { type: "video", src: "/projects/keks-assembly.mp4", alt: "Keke Assembling" },
+  { type: "image", src: "/projects/keks-parts.jpeg", alt: "keke parts" },
+  {
+    type: "video",
+    src: "/projects/keks-head.mp4",
+    alt: "Keke Assembling front",
+  },
   { type: "video", src: "/projects/keks.mp4", alt: "Keke" },
   { type: "video", src: "/projects/keke-build.mp4", alt: "Keke Build" },
-  { type: "video", src: "/projects/ev-assembly-2.mp4", alt: "EV Assembly 2" },
+  { type: "video", src: "/projects/keks.mp4", alt: "Keke 2" },
   { type: "video", src: "/projects/keks-build.mp4", alt: "Keke Build" },
 ];
 
@@ -210,21 +214,17 @@ export default function ElectricMobilityPage() {
                   src={media.src}
                   alt={media.alt}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition duration-500 group-hover:scale-110"
                 />
               ) : (
-                /* Video placeholder — the real video only loads inside the lightbox */
-                <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex flex-col items-center justify-center gap-3">
-                  <div className="w-16 h-16 rounded-full bg-purple-500/20 border-2 border-purple-400/50 flex items-center justify-center group-hover:bg-purple-500/40 transition-colors duration-300">
-                    <svg className="w-7 h-7 text-purple-300 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <span className="text-xs text-slate-400 font-medium tracking-wide uppercase px-4 text-center">
-                    {media.alt}
-                  </span>
-                </div>
+                <video
+                  src={media.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110 pointer-events-none"
+                />
               )}
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
