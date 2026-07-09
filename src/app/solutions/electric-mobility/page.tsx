@@ -210,17 +210,21 @@ export default function ElectricMobilityPage() {
                   src={media.src}
                   alt={media.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition duration-500 group-hover:scale-110"
                 />
               ) : (
-                <video
-                  src={media.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110 pointer-events-none"
-                />
+                /* Video placeholder — the real video only loads inside the lightbox */
+                <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex flex-col items-center justify-center gap-3">
+                  <div className="w-16 h-16 rounded-full bg-purple-500/20 border-2 border-purple-400/50 flex items-center justify-center group-hover:bg-purple-500/40 transition-colors duration-300">
+                    <svg className="w-7 h-7 text-purple-300 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <span className="text-xs text-slate-400 font-medium tracking-wide uppercase px-4 text-center">
+                    {media.alt}
+                  </span>
+                </div>
               )}
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
