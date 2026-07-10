@@ -36,7 +36,7 @@ const mediaItems = [
   {
     type: "image",
     src: "/projects/keks-full.jpeg",
-    alt: "Keke Assembling front",
+    alt: "Fully Assembled Keke",
   },
   { type: "video", src: "/projects/keks.mp4", alt: "Keke" },
   { type: "video", src: "/projects/keke-build.mp4", alt: "Keke Build" },
