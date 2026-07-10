@@ -44,6 +44,51 @@ const mediaItems = [
     src: "/projects/solar-light.jpeg",
     alt: "Street Light Solar Install",
   },
+  {
+    type: "image",
+    src: "/projects/solar-installation.jpeg",
+    alt: "Solar Inverter Setup",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-installation-2.jpeg",
+    alt: "Installed Solar Panel",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-installation-3.jpeg",
+    alt: "Street Light Solar Install",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-installation-4.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-installation-5.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-installation-6.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-components.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-components-2.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-components-3.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
 ];
 
 export default function SolarPowerPage() {

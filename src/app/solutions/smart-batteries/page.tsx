@@ -26,11 +26,6 @@ const mediaItems = [
     alt: "Battery shapshot",
   },
   {
-    type: "video",
-    src: "/projects/battery-2.mp4",
-    alt: "Battery-2",
-  },
-  {
     type: "image",
     src: "/projects/battery-2.jpeg",
     alt: "EV Battery Installation",
@@ -39,11 +34,6 @@ const mediaItems = [
     type: "video",
     src: "/projects/battries-series.mp4",
     alt: "Battery series",
-  },
-  {
-    type: "video",
-    src: "/projects/battery.mp4",
-    alt: "Battery",
   },
 ];
 

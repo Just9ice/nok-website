@@ -19,7 +19,11 @@ const mediaItems = [
     src: "/projects/ev-image-1.jpg",
     alt: "Electric Bike Fleet",
   },
-  { type: "video", src: "/projects/ev.mp4", alt: "EV on the Commute" },
+  {
+    type: "video",
+    src: "/projects/ev.mp4",
+    alt: "EV on the Commute",
+  },
   {
     type: "image",
     src: "/projects/ev-image-2.jpg",
@@ -30,18 +34,51 @@ const mediaItems = [
     src: "/projects/ev-image-3.jpg",
     alt: "Cargo Bikes Delivery",
   },
-  { type: "video", src: "/projects/keke-assembly.mp4", alt: "Keke Assembling" },
-  { type: "image", src: "/projects/ev-cargo.jpeg", alt: "Delivery Bikes" },
-  { type: "image", src: "/projects/keks-parts.jpeg", alt: "keke parts" },
+  {
+    type: "video",
+    src: "/projects/keke-assembly.mp4",
+    alt: "Keke Assembling",
+  },
+  {
+    type: "image",
+    src: "/projects/ev-cargo.jpeg",
+    alt: "Delivery Bikes",
+  },
+  {
+    type: "video",
+    src: "/projects/e-mobi.mp4",
+    alt: "Passenger Keke",
+  },
+  {
+    type: "image",
+    src: "/projects/keks-parts.jpeg",
+    alt: "keke parts",
+  },
   {
     type: "image",
     src: "/projects/keks-full.jpeg",
     alt: "Fully Assembled Keke",
   },
-  { type: "video", src: "/projects/keks.mp4", alt: "Keke" },
-  { type: "video", src: "/projects/keke-build.mp4", alt: "Keke Build" },
-  { type: "video", src: "/projects/keks.mp4", alt: "Keke 2" },
-  { type: "video", src: "/projects/keks-build.mp4", alt: "Keke Build" },
+  {
+    type: "video",
+    src: "/projects/keks.mp4",
+    alt: "Keke",
+  },
+  {
+    type: "video",
+    src: "/projects/keke-build.mp4",
+    alt: "Keke Build",
+  },
+  {
+    type: "video",
+    src: "/projects/keks.mp4",
+    alt: "Keke 2",
+  },
+  {
+    type: "video",
+    src: "/projects/keks-build.mp4",
+    alt: "Keke Build",
+  },
 ];
 
 export default function ElectricMobilityPage() {
