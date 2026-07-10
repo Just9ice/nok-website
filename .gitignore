@@ -40,10 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large video files — prevent GitHub push failures
-*.mp4
+# large video files — prevent GitHub push failures (>100MB limit)
+# Only ignore specific large videos, not all mp4s
+# If you add a video >50MB, add it here explicitly
 *.mov
 *.avi
 *.mkv
 *.wmv
-*.webm
