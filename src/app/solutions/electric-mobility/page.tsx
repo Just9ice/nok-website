@@ -34,8 +34,8 @@ const mediaItems = [
   { type: "image", src: "/projects/ev-cargo.jpeg", alt: "Delivery Bikes" },
   { type: "image", src: "/projects/keks-parts.jpeg", alt: "keke parts" },
   {
-    type: "video",
-    src: "/projects/keks-head.mp4",
+    type: "image",
+    src: "/projects/keks-full.jpeg",
     alt: "Keke Assembling front",
   },
   { type: "video", src: "/projects/keks.mp4", alt: "Keke" },
