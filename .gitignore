@@ -39,17 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Ignore heavy project videos
-public/projects/*.mp4
-
-!public/projects/ev.mp4
-!public/projects/keke-assembly.mp4
-!public/projects/keks.mp4
-!public/projects/keke-build.mp4
-!public/projects/keks-build.mp4
-!public/projects/batteries.mp4
-!public/projects/battries-series.mp4
-!public/projects/battery.mp4
-!public/projects/solar.mp4
-!public/projects/e-mobi.mp4
