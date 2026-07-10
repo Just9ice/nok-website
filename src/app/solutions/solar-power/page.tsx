@@ -89,6 +89,11 @@ const mediaItems = [
     src: "/projects/solar-components-3.jpeg",
     alt: "Solar / Inverter Installation",
   },
+  {
+    type: "video",
+    src: "/inverter-setup.mp4",
+    alt: "Solar / Inverter Setup",
+  },
 ];
 
 export default function SolarPowerPage() {

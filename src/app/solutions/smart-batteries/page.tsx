@@ -35,6 +35,61 @@ const mediaItems = [
     src: "/projects/battries-series.mp4",
     alt: "Battery series",
   },
+  {
+    type: "image",
+    src: "/projects/solar-installation-5.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-installation-6.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-components.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-components-2.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/solar-components-3.jpeg",
+    alt: "Solar / Inverter Installation",
+  },
+  {
+    type: "image",
+    src: "/projects/battery-tower.jpeg",
+    alt: "Battery Tower",
+  },
+  {
+    type: "image",
+    src: "/projects/battery-tower-1.jpeg",
+    alt: "Battery Tower",
+  },
+  {
+    type: "image",
+    src: "/projects/battery-cage.jpeg",
+    alt: "Battery Cage",
+  },
+  {
+    type: "image",
+    src: "/projects/battery-cage-1.jpeg",
+    alt: "Battery Cage",
+  },
+  {
+    type: "image",
+    src: "/projects/batter-sup.jpeg",
+    alt: "Battery Support",
+  },
+  {
+    type: "image",
+    src: "/projects/battery-modern.jpeg",
+    alt: "Battery Modern",
+  },
 ];
 
 export default function SmartBatteriesPage() {
