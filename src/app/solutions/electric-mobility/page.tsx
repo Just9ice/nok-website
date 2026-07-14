@@ -16,6 +16,16 @@ import {
 const mediaItems = [
   {
     type: "image",
+    src: "/projects/cargo-alone.jpeg",
+    alt: "Electric Bike Fleet",
+  },
+  {
+    type: "image",
+    src: "/projects/cargo-load.jpeg",
+    alt: "Electric Bike Fleet",
+  },
+  {
+    type: "image",
     src: "/projects/ev-image-1.jpg",
     alt: "Electric Bike Fleet",
   },
