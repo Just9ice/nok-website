@@ -60,6 +60,16 @@ const mediaItems = [
     alt: "Fully Assembled Keke",
   },
   {
+    type: "image",
+    src: "/projects/keks-covered.jpeg",
+    alt: "Fully Assembled Keke",
+  },
+  {
+    type: "image",
+    src: "/projects/keks-uncovered.jpeg",
+    alt: "Fully Assembled Keke",
+  },
+  {
     type: "video",
     src: "/projects/keks.mp4",
     alt: "Keke",
@@ -78,6 +88,11 @@ const mediaItems = [
     type: "video",
     src: "/projects/keks-build.mp4",
     alt: "Keke Build",
+  },
+  {
+    type: "video",
+    src: "/projects/cargo-keks.mp4",
+    alt: "Cargo Keke",
   },
 ];
 
