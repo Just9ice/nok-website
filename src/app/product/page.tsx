@@ -40,7 +40,7 @@ const products: Product[] = [
     ],
   },
   {
-    image: "/projects/myKekeApp.png",
+    image: "/projects/appMerge.png",
     title: "Software & Web Development Services",
     features: [
       "Web Application Development",
@@ -219,9 +219,7 @@ export default function ProductPage() {
                       src={product.image}
                       alt={product.title}
                       fill
-                      className={`object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 ${
-                        product.objectPosition || "object-center"
-                      }`}
+                      className={`object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 ${product.objectPosition}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                       <h3 className="text-2xl font-bold text-white mb-0 leading-tight text-shadow-md">
