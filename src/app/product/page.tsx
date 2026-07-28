@@ -4,7 +4,14 @@ import styles from "../shared.module.css";
 import { FadeIn } from "../components/ClientPageEffects";
 import { PageBackground } from "../components/PageBackground";
 
-const products = [
+type Product = {
+  image: string;
+  title: string;
+  features: string[];
+  objectPosition?: string;
+};
+
+const products: Product[] = [
   {
     image: "/battery.jpg",
     title: "Battery & Inverter Systems",
@@ -33,12 +40,25 @@ const products = [
     ],
   },
   {
-    image: "/software-solutions.jpg",
-    title: "Software Solutions",
+    image: "/projects/myKekeApp.png",
+    title: "Software & Web Development Services",
     features: [
-      "Fleet management dashboards",
-      "Energy performance analytics",
-      "Real-time system monitoring",
+      "Web Application Development",
+      "Mobile Application Development",
+      "Energy Management Systems",
+      "Fleet Telematics and Tracking",
+      "Custom Software Development",
+    ],
+  },
+  {
+    image: "/projects/flurApp.png",
+    title: "Fintech Solutions",
+    objectPosition: "object-top",
+    features: [
+      "Pay as you go",
+      "Lending and Financing",
+      "Mobile Money",
+      "Payments Systems",
     ],
   },
   {
@@ -105,7 +125,8 @@ export default function ProductPage() {
       <header
         className="relative overflow-hidden text-center text-white w-full px-4 pt-[180px] pb-16 md:px-8 md:pt-[260px] md:pb-[140px] bg-local md:bg-fixed"
         style={{
-          backgroundImage: "linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url(/product2.jpg)",
+          backgroundImage:
+            "linear-gradient(to bottom right, rgba(2, 6, 23, 0.95), rgba(15, 118, 110, 0.6)), url(/product2.jpg)",
           backgroundColor: "#020617",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -129,34 +150,56 @@ export default function ProductPage() {
           >
             Our Products
           </div>
-        
-        <h1 className={styles.title} style={{ color: "white", textShadow: "0 8px 30px rgba(0,0,0,0.5)" }}>
-          Clean Energy &amp; Mobility<br className="hidden sm:block" />
-          <span style={{ color: "#2dd4bf", textShadow: "0 0 40px rgba(45, 212, 191, 0.4)" }}>Built for Real Life</span>
-        </h1>
-        
-        <p className={styles.introText} style={{ color: "rgba(255,255,255,0.85)", textShadow: "0 4px 15px rgba(0,0,0,0.5)", fontSize: "1.25rem", maxWidth: "800px" }}>
-          From reliable battery systems to electric vehicles and smart software,
-          our product lineup is engineered to cut costs, reduce emissions, and
-          keep life moving.
-        </p>
-        
-        <div className={styles.ctaGroup} style={{ marginTop: "3.5rem" }}>
-          <Link 
-            href="/contact" 
-            className="rounded-xl px-8 py-4 font-semibold text-slate-900 transition-all duration-300"
-            style={{ backgroundColor: "#2dd4bf", boxShadow: "0 4px 20px rgba(45, 212, 191, 0.3)" }}
+
+          <h1
+            className={styles.title}
+            style={{ color: "white", textShadow: "0 8px 30px rgba(0,0,0,0.5)" }}
           >
-            Get a Quote
-          </Link>
-          <Link 
-            href="/financing" 
-            className="rounded-xl border border-white/30 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10"
+            Clean Energy &amp; Mobility
+            <br className="hidden sm:block" />
+            <span
+              style={{
+                color: "#2dd4bf",
+                textShadow: "0 0 40px rgba(45, 212, 191, 0.4)",
+              }}
+            >
+              Built for Real Life
+            </span>
+          </h1>
+
+          <p
+            className={styles.introText}
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              textShadow: "0 4px 15px rgba(0,0,0,0.5)",
+              fontSize: "1.25rem",
+              maxWidth: "800px",
+            }}
           >
-             Financing Options
-          </Link>
-        </div>
-      </FadeIn>
+            From reliable battery systems to electric vehicles and smart
+            software, our product lineup is engineered to cut costs, reduce
+            emissions, and keep life moving.
+          </p>
+
+          <div className={styles.ctaGroup} style={{ marginTop: "3.5rem" }}>
+            <Link
+              href="/contact"
+              className="rounded-xl px-8 py-4 font-semibold text-slate-900 transition-all duration-300"
+              style={{
+                backgroundColor: "#2dd4bf",
+                boxShadow: "0 4px 20px rgba(45, 212, 191, 0.3)",
+              }}
+            >
+              Get a Quote
+            </Link>
+            <Link
+              href="/financing"
+              className="rounded-xl border border-white/30 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10"
+            >
+              Financing Options
+            </Link>
+          </div>
+        </FadeIn>
       </header>
 
       {/* Main Content Area */}
@@ -176,7 +219,9 @@ export default function ProductPage() {
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                      className={`object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 ${
+                        product.objectPosition || "object-center"
+                      }`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                       <h3 className="text-2xl font-bold text-white mb-0 leading-tight text-shadow-md">
@@ -188,7 +233,10 @@ export default function ProductPage() {
                   <div className="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 h-full">
                     <ul className={styles.featureList} style={{ marginTop: 0 }}>
                       {product.features.map((feat, i) => (
-                        <li key={i} className="mb-3 flex items-start text-slate-600 dark:text-slate-300">
+                        <li
+                          key={i}
+                          className="mb-3 flex items-start text-slate-600 dark:text-slate-300"
+                        >
                           <span className="mr-3 mt-1 flex-shrink-0">
                             <CheckIcon />
                           </span>
