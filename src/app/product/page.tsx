@@ -48,6 +48,8 @@ const products: Product[] = [
       "Energy Management Systems",
       "Fleet Telematics and Tracking",
       "Custom Software Development",
+      "AI-Powered Business Solutions",
+      "Data Analytics and Business Intelligence",
     ],
   },
   {
@@ -59,6 +61,8 @@ const products: Product[] = [
       "Lending and Financing",
       "Mobile Money",
       "Payments Systems",
+      "Offline-Capable (Transact anywhere, zero data required)",
+      "Scan-Based (Instant pay via secure QR codes)",
     ],
   },
   {
