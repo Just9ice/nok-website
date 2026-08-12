@@ -72,7 +72,7 @@ export default function FlurPage() {
 
               <Link
                 href="https://play.google.com/store/apps/details?id=pay.flur.app"
-                className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl"
+                className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl hover:text-white/95"
               >
                 <PlayStoreIcon />
                 <div className="text-left flex flex-col justify-center leading-none">
