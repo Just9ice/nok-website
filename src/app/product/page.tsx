@@ -14,6 +14,34 @@ type Product = {
 
 const products: Product[] = [
   {
+    image: "/projects/flurApp.png",
+    title: "Fintech Solutions",
+    objectPosition: "object-top",
+    href: "/flur",
+    features: [
+      "Pay as you go",
+      "Lending and Financing",
+      "Mobile Money",
+      "Payments Systems",
+      "Offline-Capable (Transact anywhere, zero data required)",
+      "Scan-Based (Instant pay via secure QR codes)",
+    ],
+  },
+  {
+    image: "/projects/appMerge.png",
+    title: "Software & Web Development Services",
+    href: "/mykeke",
+    features: [
+      "Web Application Development",
+      "Mobile Application Development",
+      "Energy Management Systems",
+      "Fleet Telematics and Tracking",
+      "Custom Software Development",
+      "AI-Powered Business Solutions",
+      "Data Analytics and Business Intelligence",
+    ],
+  },
+  {
     image: "/battery.jpg",
     title: "Battery & Inverter Systems",
     features: [
@@ -38,34 +66,6 @@ const products: Product[] = [
       "Zero-emission last-mile transport",
       "Durable lithium battery packs",
       "Built for commercial and passenger use",
-    ],
-  },
-  {
-    image: "/projects/appMerge.png",
-    title: "Software & Web Development Services",
-    href: "/mykeke",
-    features: [
-      "Web Application Development",
-      "Mobile Application Development",
-      "Energy Management Systems",
-      "Fleet Telematics and Tracking",
-      "Custom Software Development",
-      "AI-Powered Business Solutions",
-      "Data Analytics and Business Intelligence",
-    ],
-  },
-  {
-    image: "/projects/flurApp.png",
-    title: "Fintech Solutions",
-    objectPosition: "object-top",
-    href: "/flur",
-    features: [
-      "Pay as you go",
-      "Lending and Financing",
-      "Mobile Money",
-      "Payments Systems",
-      "Offline-Capable (Transact anywhere, zero data required)",
-      "Scan-Based (Instant pay via secure QR codes)",
     ],
   },
   {
