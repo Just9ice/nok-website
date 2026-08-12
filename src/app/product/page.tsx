@@ -9,6 +9,7 @@ type Product = {
   title: string;
   features: string[];
   objectPosition?: string;
+  href?: string;
 };
 
 const products: Product[] = [
@@ -42,6 +43,7 @@ const products: Product[] = [
   {
     image: "/projects/appMerge.png",
     title: "Software & Web Development Services",
+    href: "/mykeke",
     features: [
       "Web Application Development",
       "Mobile Application Development",
@@ -56,6 +58,7 @@ const products: Product[] = [
     image: "/projects/flurApp.png",
     title: "Fintech Solutions",
     objectPosition: "object-top",
+    href: "/flur",
     features: [
       "Pay as you go",
       "Lending and Financing",
@@ -211,10 +214,14 @@ export default function ProductPage() {
         <section className={styles.section} style={{ marginTop: "1rem" }}>
           <h2 className={styles.sectionTitle}>Our Portfolio</h2>
           <div className={styles.grid}>
-            {products.map((product) => (
-              <FadeIn key={product.title} className="relative">
+            {products.map((product) => {
+              const CardContent = (
                 <div
-                  className={`${styles.card} group overflow-hidden`}
+                  className={`${styles.card} group overflow-hidden ${
+                    product.href
+                      ? "cursor-pointer hover:shadow-2xl hover:border-[#2dd4bf] transition-all duration-300"
+                      : ""
+                  }`}
                   style={{ padding: 0, textAlign: "left" }}
                 >
                   {/* Premium Image Header */}
@@ -223,7 +230,9 @@ export default function ProductPage() {
                       src={product.image}
                       alt={product.title}
                       fill
-                      className={`object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 ${product.objectPosition}`}
+                      className={`object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 ${
+                        product.objectPosition || ""
+                      }`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                       <h3 className="text-2xl font-bold text-white mb-0 leading-tight text-shadow-md">
@@ -232,7 +241,7 @@ export default function ProductPage() {
                     </div>
                   </div>
 
-                  <div className="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 h-full">
+                  <div className="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 h-full relative">
                     <ul className={styles.featureList} style={{ marginTop: 0 }}>
                       {product.features.map((feat, i) => (
                         <li
@@ -246,10 +255,27 @@ export default function ProductPage() {
                         </li>
                       ))}
                     </ul>
+                    {product.href && (
+                      <div className="mt-6 flex items-center text-[#2dd4bf] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                        Explore App <span className="ml-2">→</span>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </FadeIn>
-            ))}
+              );
+
+              return (
+                <FadeIn key={product.title} className="relative">
+                  {product.href ? (
+                    <Link href={product.href} className="block h-full">
+                      {CardContent}
+                    </Link>
+                  ) : (
+                    CardContent
+                  )}
+                </FadeIn>
+              );
+            })}
           </div>
         </section>
       </div>
