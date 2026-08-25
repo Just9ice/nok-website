@@ -104,6 +104,11 @@ const mediaItems = [
     src: "/projects/cargo-keks.mp4",
     alt: "Cargo Keke",
   },
+  {
+    type: "video",
+    src: "/projects/keke-loaded.mp4",
+    alt: "Cargo Keke",
+  },
 ];
 
 export default function ElectricMobilityPage() {
